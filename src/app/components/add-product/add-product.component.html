@@ -1,0 +1,69 @@
+<div *ngIf="formsProducts">
+<div class="container col-6">
+
+  <form [formGroup]="formsProducts">
+
+    <div class="form-group">
+      <label>name</label>
+      <input type="text" formControlName="name" class="form-control"
+             [ngClass]="{'is-invalid':formsProducts.controls['name'].errors && formsProducts.controls['name'].touched,
+                          'is-valid':!formsProducts.controls['name'].errors
+                        }"
+
+      >
+      <span *ngIf="formsProducts.controls['name'].hasError('required') && formsProducts.controls['name'].touched " class="text-danger"> name is required</span>
+    </div>
+
+    <div class="form-group">
+      <label>price</label>
+      <input type="text" formControlName="price" class="form-control"
+             [ngClass]="{'is-invalid':formsProducts.controls['price'].errors && formsProducts.controls['price'].touched,
+                         'is-valid':!formsProducts.controls['price'].errors
+              }"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>quantity</label>
+      <input type="text" formControlName="quantity" class="form-control"
+             [ngClass]="{'is-invalid':formsProducts.controls['quantity'].errors &&formsProducts.controls['quantity'].touched ,
+                          'is-valid':!formsProducts.controls['quantity'].errors
+             }"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>selected</label>
+      <input type="text" formControlName="selected" class="form-control"
+             [ngClass]="{'is-invalid':formsProducts.controls['selected'].errors &&formsProducts.controls['selected'].touched ,
+                             'is-valid':!formsProducts.controls['selected'].errors
+              }"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>available</label>
+      <input type="text" formControlName="available" class="form-control"
+             [ngClass]="{'is-invalid':formsProducts.controls['available'].errors &&formsProducts.controls['available'].touched ,
+                            'is-valid':!formsProducts.controls['available'].errors
+             }"
+      >
+    </div>
+
+    <button type="submit" [disabled]="!formsProducts.valid" class="btn btn-success" (click)="addProduct()">SUBMIT</button>
+<div class="mt-2">
+
+  <div class="alert alert-success" *ngIf="formvalide">
+    <strong>success</strong> the produc added ...
+  </div>
+
+</div>
+
+  </form>
+
+
+</div>
+
+
+
+</div>

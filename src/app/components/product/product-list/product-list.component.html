@@ -1,0 +1,67 @@
+<div class="container mt-4">
+
+
+
+
+
+
+
+
+<ng-container *ngIf="productsList | async as res" [ngSwitch]="res.dataState">
+
+  <ng-container *ngSwitchCase="datastateProducts.loeding">
+
+    <div class="spinner-border"></div>
+
+
+
+  </ng-container>
+
+  <ng-container *ngSwitchCase="datastateProducts.erreur">
+
+    <div class="alert alert-danger">
+      <strong>warning!</strong> <span>{{res.ereurState}}</span>
+    </div>
+
+  </ng-container>
+
+
+  <ng-container *ngSwitchCase="datastateProducts.loeded">
+
+
+
+
+
+    <table class="table" >
+
+      <thead>
+      <tr>
+        <th>ID</th>  <th>NAME</th>  <th>PRICE</th>  <th>QUANTITY</th>  <th>SELECTED</th>  <th>AVAILABLE</th>
+      </tr>
+      </thead>
+
+
+      <tbody>
+
+      <app-product-item *ngFor="let p of res.data" [productsItem]="p" style="display: contents"></app-product-item>
+
+      </tbody>
+
+
+
+    </table>
+
+
+
+
+  </ng-container>
+
+</ng-container>
+
+
+
+</div>
+
+
+
+

@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "computer hp i9",
+      "price": 4300,
+      "quantity": 23,
+      "selected": false,
+      "available": false
+    },
+    {
+      "id": 2,
+      "name": "printer",
+      "price": 4300,
+      "quantity": 37,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "phone sumsung",
+      "price": 200,
+      "quantity": 20,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 4,
+      "name": "screan",
+      "price": "12",
+      "quantity": "12",
+      "selected": "true",
+      "available": "false"
+    }
+  ]
+}

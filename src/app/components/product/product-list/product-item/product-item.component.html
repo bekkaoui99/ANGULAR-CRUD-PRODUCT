@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+<tr *ngIf="productsItem">
+
+  <td>{{productsItem.id}}</td>
+  <td>{{productsItem.name}}</td>
+  <td>{{productsItem.price}}</td>
+  <td>{{productsItem.quantity}}</td>
+  <td>
+
+    <buttonc class="" (click)="getOneProducts(productsItem)" [ngClass]="productsItem.selected?'fa fa-check green':'fa fa-check red'">
+
+
+
+    </buttonc>
+
+
+  </td>
+  <td>{{productsItem.available}}</td>
+
+  <td>
+    <button class="btn btn-danger" (click)="deleteProduct(productsItem)">delete</button>
+  </td>
+
+  <td>
+    <button class="btn btn-success" (click)=" updateProduct(productsItem)">update</button>
+  </td>
+
+</tr>
+
+
+
